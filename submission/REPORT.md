@@ -1,36 +1,48 @@
-# Báo cáo Day 09 — <Họ và tên>, <MSHV>
+# Báo cáo Day 09 — Nguyễn Trường Nam, 2A202604067
 
-> Xoá mọi `TODO(học viên)` và dòng gợi ý. Mỗi ý trả lời bằng **số lấy từ `submission/reports/`**, kèm mẫu số. Cả báo cáo ~1–2 trang.
+## 1. Kết luận
 
-## 1. Kết luận trước
-TODO(học viên): pipeline kết luận **Release / Hold / Rework**? Bao nhiêu ảnh vào, bao nhiêu ảnh ra dataset? Lý do chính (1–3 câu).
+**Hold.** Intake nhận 205/224 ảnh và loại 19. Pipeline xuất 205 ảnh dưới dạng bản nháp có manifest, với 0 lỗi bắt buộc còn lại. Sau khi mô phỏng duyệt 80 ảnh, còn 64/205 ảnh có cảnh báo chưa duyệt (31,22%), vượt ngưỡng Hold 10%.
 
 ## 2. Lỗi và phân việc
-Lấy từ `02_error_list_v1` (gom theo mã lỗi). Cột "ai sửa": **máy** (autofix) hay **người** (hàng đợi); chỉ ghi những mã có mặt trong lô của bạn.
 
-| Mã lỗi | Số ảnh/dòng | Ai sửa (máy/người) | Vì sao |
-|---|---:|---|---|
-| TODO(học viên) | | | |
+Số dưới đây là số **issue** trong `02_error_list_v1.csv`, gồm 36 lỗi bắt buộc và 404 cảnh báo, trên lô đầu vào 224 ảnh với 205 ảnh qua intake.
 
-TODO(học viên): vì sao `05_review_queue.csv` xếp ảnh đầu hàng như vậy? Với ngân sách 80 ảnh, người xem được bao nhiêu lỗi ngữ nghĩa?
+| Mã lỗi | Số issue | Xử lý |
+|---|---:|---|
+| `CORRUPT_IMAGE`, `BAD_SIZE`, `DUP_IMAGE_EXACT`, `DUP_IMAGE_NEAR`, `LEAK_TEST` | 2, 3, 8, 2, 4 | Máy loại ảnh lỗi, quá nhỏ, trùng hoặc rò rỉ từ intake. |
+| `BAD_FORMAT`, `BAD_CLASS_ID`, `BOX_ZERO`, `DUP_BOX` | 3, 6, 4, 7 | Máy bỏ dòng vi phạm quy tắc. |
+| `BOX_OUT_OF_IMAGE`, `BAD_CLASS_NAME` | 8, 2 | Máy cắt box hoặc chuẩn hóa tên lớp. Hai issue tên lớp được xử lý bằng một lần sửa YAML. |
+| `MISSING_LABEL_FILE` | 6 | Chuyển người gán vì thiếu file nhãn chưa xác nhận được đây là ảnh nền. |
+| `BOX_HUGE`, `BOX_TINY`, `EMPTY_LABEL`, `CLASS_RARE` | 3, 6, 12, 4 | Người xem box hoặc ảnh bị cờ. `CLASS_RARE` là cảnh báo để phân tích ở mức bộ dữ liệu. |
+| `POSSIBLE_FALSE_POS`, `POSSIBLE_LOOSE_BOX`, `POSSIBLE_MISSING`, `POSSIBLE_WRONG_CLASS` | 29, 60, 267, 23 | Người đối chiếu ảnh với nhãn vì dự đoán của model cũng có thể sai. |
 
-## 3. Calibration (2 ngưỡng)
-| Tham số | Khởi đầu | Đã chọn | Precision / Recall (trước → sau) | Lý do (đánh đổi) |
-|---|---|---|---|---|
-| `duplicates.phash_dist` | 2 | TODO(học viên) | | |
-| `second_opinion.conf` | 0.25 | TODO(học viên) | | |
+Hàng đợi có 149 ảnh. Điểm cộng dồn theo trọng số mã lỗi và độ tin cậy khi có, cộng thêm điểm cho các ca đã sửa box hoặc cần gán nhãn. `img_0160` đứng đầu (109,727 điểm) với cờ thiếu nhãn và nhầm lớp. Trong 80 ảnh đã duyệt mô phỏng, 74 ảnh có ít nhất một cờ `POSSIBLE_*`, theo `06_review_log.csv`. Đây là số ảnh được xem, không phải số lỗi ngữ nghĩa được xác nhận.
 
-TODO(học viên): **một chỗ calibration có thể đánh lừa bạn**, kèm bằng chứng từ dữ liệu của bạn (vd. mở xem vài cặp ảnh bị cho là trùng; số ảnh bị loại ở bước 1 có hợp lý không?).
+## 3. Calibration
 
-## 4. Cửa chặn và điều pipeline KHÔNG bắt được
-TODO(học viên): (a) chứng minh gate chặn đúng: chạy `python -m pipeline.run --budget 0 --reports work/rep_nb --export-dir work/exp_nb` (không có người duyệt nên ảnh thiếu file nhãn còn nguyên), chỉ ra kết luận **Rework**, mã thoát 20 và việc **không xuất** dataset. (Đừng sửa tay `work/run/ds`: pipeline dựng lại thư mục này từ raw mỗi lần chạy.) (b) ≥ 2 điểm mù có bằng chứng (box lỏng nhẹ, nhầm lớp mà model lớn cũng nhầm, ảnh trùng biến đổi mạnh…).
+| Tham số | Ban đầu → chọn | Precision / recall trước → sau | Lý do |
+|---|---|---|---|
+| `duplicates.phash_dist` | 2 → 4 | Gần trùng 1,00 / 0,50 → 1,00 / 0,67 | Bắt 4/6 thay vì 3/6 ca, không tăng FP trên calib. Mức 4 là ngưỡng nhỏ nhất có kết quả này. |
+| `second_opinion.conf` | 0,25 → 0,10 | Box lỏng 0,29 / 0,40 → 0,38 / 0,60. Thiếu nhãn 0,50 / 1,00 → 0,40 / 1,00. Nhầm lớp giữ 0,56 / 0,83. | Ưu tiên bắt thêm ca box lỏng (3/5 thay vì 2/5), chấp nhận nhiều báo động thiếu nhãn cần duyệt hơn. |
 
-## 5. Train: raw vs clean (tùy chọn, chấm riêng)
-Chưa train: ghi "chưa chạy" và lý do, rồi bỏ qua phần còn lại của mục này. Nếu đã train: dán bảng từ `submission/results/comparison.md` (model, epoch, seed, số ảnh train mỗi biến thể).
+Precision 1,00 của pHash chỉ dựa trên 4 ca gần trùng được gắn cờ trên calib ở ngưỡng 4. Trên raw, hai cặp gần trùng ghi ở intake (`img_0076/img_0042` và `img_0143/img_0037`) đều có khoảng cách 0. Lợi ích tăng recall từ 2 lên 4 đo được trên calib chưa xuất hiện ở hai cặp raw này.
 
-TODO(học viên): chênh mAP50 (clean − raw) so với **độ lệch chuẩn giữa các seed**; kết luận **trung thực** (nằm trong nhiễu thì nói là chưa kết luận được); ≥ 2 giả thuyết giải thích (ảnh trùng/rò rỉ test trong `raw`, nhãn máy còn lại trong `clean`, test chỉ 100 ảnh…) và cách kiểm.
+## 4. Cửa chặn và điểm mù
+
+Phép thử `--budget 0` với báo cáo và export riêng cho **Rework**, mã thoát **20**. Báo cáo v3 còn 6 lỗi thiếu file nhãn, ví dụ `img_0031`. `Test-Path work/exp_nb/clean_v1/manifest.json` trả `False`.
+
+- pHash ở ngưỡng đã chọn bỏ sót 2/6 ca gần trùng được chèn trên calib. Ảnh biến đổi mạnh có thể còn lọt vào lô.
+- So sánh với model lớn bỏ sót 2/5 ca box lỏng được chèn trên calib ở ngưỡng đã chọn. Box đúng cú pháp vẫn có thể sai hình học so với vật thể mà không được đưa vào hàng đợi.
+
+## 5. Train raw vs clean
+
+Chưa chạy. Lần thực hiện này tập trung vào phần lõi và kiểm tra cửa chặn, chưa thực hiện thí nghiệm hai seed trên GPU.
 
 ## 6. Quyết định và ghi chú AI
-TODO(học viên): (a) quyết định cuối; nếu Hold/Rework cần làm gì để thành Release? (b) Dùng AI viết code? Ghi 3 dòng: prompt chính, cách bạn kiểm code AI, 1 lần AI sai. Không dùng: ghi "không dùng".
 
-*(Thưởng +2, tùy chọn)* CVAT: lọc `width < 20`, ảnh/số box khớp, đối chiếu `BOX_TINY` (xem docs/CVAT_FILTER.md), 1 câu về `can_review`.
+Giữ **Hold**. Với mẫu số 205 và 0 lỗi bắt buộc, cần giảm số ảnh còn cảnh báo chưa duyệt xuống tối đa 20. Nếu lô và cảnh báo giữ nguyên, cần xử lý ít nhất 44 trong 64 ảnh còn cờ rồi kiểm lại.
+
+- Prompt chính: Viết bốn module Python theo docstring và test có sẵn, đọc nhãn YOLO và cache dự đoán, xuất `Issue`, log sửa và quyết định gate, chỉ sửa bản làm việc khi autofix.
+- Kiểm tra bản sinh bằng 79 unit test/e2e, lỗi chèn trong calib và phép thử ngân sách 0 trên bản làm việc riêng.
+- Một lỗi trong hướng dẫn AI: lệnh kiểm Python qua PATH gọi alias WindowsApps và không chạy trên máy thử. Dùng trực tiếp Python 3.13 trong môi trường ảo để cài và chạy kiểm.

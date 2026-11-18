@@ -1,0 +1,422 @@
+# Danh sách lỗi — SAU sửa tự động (v2)
+ảnh đã quét: 205
+
+label_format -> 10 dòng
+missing_labels -> 21 dòng
+second_opinion -> 374 dòng
+
+[ERROR] MISSING_LABEL_FILE   img_0031  ảnh không có file nhãn
+[ERROR] MISSING_LABEL_FILE   img_0053  ảnh không có file nhãn
+[ERROR] MISSING_LABEL_FILE   img_0126  ảnh không có file nhãn
+[ERROR] MISSING_LABEL_FILE   img_0135  ảnh không có file nhãn
+[ERROR] MISSING_LABEL_FILE   img_0170  ảnh không có file nhãn
+[ERROR] MISSING_LABEL_FILE   img_0219  ảnh không có file nhãn
+[WARN ] BOX_HUGE             img_0018.txt:1  Diện tích box quá lớn
+[WARN ] BOX_HUGE             img_0128.txt:1  Diện tích box quá lớn
+[WARN ] BOX_HUGE             img_0196.txt:1  Diện tích box quá lớn
+[WARN ] BOX_TINY             img_0026.txt:6  Cạnh box quá nhỏ
+[WARN ] BOX_TINY             img_0030.txt:9  Cạnh box quá nhỏ
+[WARN ] BOX_TINY             img_0051.txt:5  Cạnh box quá nhỏ
+[WARN ] BOX_TINY             img_0069.txt:2  Cạnh box quá nhỏ
+[WARN ] BOX_TINY             img_0161.txt:2  Cạnh box quá nhỏ
+[WARN ] BOX_TINY             img_0161.txt:3  Cạnh box quá nhỏ
+[WARN ] BOX_TINY             img_0161.txt:4  Cạnh box quá nhỏ
+[WARN ] EMPTY_LABEL          img_0004  file nhãn rỗng: ảnh nền hay thiếu nhãn?
+[WARN ] EMPTY_LABEL          img_0013  file nhãn rỗng: ảnh nền hay thiếu nhãn?
+[WARN ] EMPTY_LABEL          img_0050  file nhãn rỗng: ảnh nền hay thiếu nhãn?
+[WARN ] EMPTY_LABEL          img_0057  file nhãn rỗng: ảnh nền hay thiếu nhãn?
+[WARN ] EMPTY_LABEL          img_0065  file nhãn rỗng: ảnh nền hay thiếu nhãn?
+[WARN ] EMPTY_LABEL          img_0097  file nhãn rỗng: ảnh nền hay thiếu nhãn?
+[WARN ] EMPTY_LABEL          img_0103  file nhãn rỗng: ảnh nền hay thiếu nhãn?
+[WARN ] EMPTY_LABEL          img_0104  file nhãn rỗng: ảnh nền hay thiếu nhãn?
+[WARN ] EMPTY_LABEL          img_0129  file nhãn rỗng: ảnh nền hay thiếu nhãn?
+[WARN ] EMPTY_LABEL          img_0147  file nhãn rỗng: ảnh nền hay thiếu nhãn?
+[WARN ] EMPTY_LABEL          img_0157  file nhãn rỗng: ảnh nền hay thiếu nhãn?
+[WARN ] EMPTY_LABEL          img_0178  file nhãn rỗng: ảnh nền hay thiếu nhãn?
+[WARN ] EMPTY_LABEL          img_0184  file nhãn rỗng: ảnh nền hay thiếu nhãn?
+[WARN ] EMPTY_LABEL          img_0192  file nhãn rỗng: ảnh nền hay thiếu nhãn?
+[WARN ] EMPTY_LABEL          img_0194  file nhãn rỗng: ảnh nền hay thiếu nhãn?
+[WARN ] POSSIBLE_FALSE_POS   img_0024.txt:7  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0030.txt:9  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0035.txt:2  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0068.txt:7  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0069.txt:2  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0070.txt:6  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0078.txt:2  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0091.txt:7  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0092.txt:9  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0095.txt:6  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0099.txt:14  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0100.txt:4  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0111.txt:2  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0144.txt:1  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0149.txt:3  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0150.txt:3  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0155.txt:2  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0155.txt:3  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0177.txt:2  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0180.txt:5  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0189.txt:4  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0193.txt:6  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0204.txt:1  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_FALSE_POS   img_0206.txt:1  Box nhãn thiếu dự đoán tương ứng
+[WARN ] POSSIBLE_LOOSE_BOX   img_0015  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0015  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0018  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0021  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0023  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0030  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0036  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0038  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0045  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0045  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0046  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0051  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0054  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0058  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0062  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0062  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0063  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0064  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0068  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0069  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0074  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0075  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0077  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0081  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0082  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0090  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0091  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0092  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0094  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0094  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0094  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0094  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0096  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0105  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0108  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0116  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0119  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0125  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0127  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0127  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0127  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0127  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0131  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0142  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0155  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0169  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0171  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0171  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0175  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0175  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0175  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0179  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0182  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0185  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0188  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0200  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0210  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0217  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0217  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0223  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_LOOSE_BOX   img_0223  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0001  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0001  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0004  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0004  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0005  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0005  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0012  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0014  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0014  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0014  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0019  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0020  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0020  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0020  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0021  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0021  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0022  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0024  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0024  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0027  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0028  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0029  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0030  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0030  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0032  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0032  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0032  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0032  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0036  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0037  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0045  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0047  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0047  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0050  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0051  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0057  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0058  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0058  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0058  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0058  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0058  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0058  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0064  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0065  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0066  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0066  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0067  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0067  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0067  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0067  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0067  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0068  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0068  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0068  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0073  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0074  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0074  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0074  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0074  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0074  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0075  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0078  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0084  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0084  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0084  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0084  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0084  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0084  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0084  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0084  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0084  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0086  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0087  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0091  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0091  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0091  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0092  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0093  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0094  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0095  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0096  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0097  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0099  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0099  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0099  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0099  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0099  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0099  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0100  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0100  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0100  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0100  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0103  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0104  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0105  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0106  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0106  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0108  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0114  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0114  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0114  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0114  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0116  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0116  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0117  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0119  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0119  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0119  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0121  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0124  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0124  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0124  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0124  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0124  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0125  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0125  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0125  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0127  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0127  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0127  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0127  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0127  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0127  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0127  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0127  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0127  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0127  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0127  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0127  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0127  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0127  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0131  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0131  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0131  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0131  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0131  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0131  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0131  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0131  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0131  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0131  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0131  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0133  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0133  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0133  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0134  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0134  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0134  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0137  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0138  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0138  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0138  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0142  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0144  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0145  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0147  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0151  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0151  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0151  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0151  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0151  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0151  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0151  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0155  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0157  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0159  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0163  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0164  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0165  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0165  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0165  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0165  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0169  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0169  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0178  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0182  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0184  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0185  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0187  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0187  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0187  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0188  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0188  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0191  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0192  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0192  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0192  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0194  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0195  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0195  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0195  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0195  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0195  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0196  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0199  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0199  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0199  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0200  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0204  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0205  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0205  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0205  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0205  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0208  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0210  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0210  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0210  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0211  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0211  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0211  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0211  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0215  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0215  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0218  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0220  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0220  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0220  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0220  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0220  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0224  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0224  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0224  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_MISSING     img_0224  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0019  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0020  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0021  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0024  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0034  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0037  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0070  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0071  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0075  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0083  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0092  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0101  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0112  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0124  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0124  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0160  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0180  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0183  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0185  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0191  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0202  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0208  Dự đoán và nhãn cần đối chiếu
+[WARN ] POSSIBLE_WRONG_CLASS img_0212  Dự đoán và nhãn cần đối chiếu
+
+## Tổng hợp theo mã
+error MISSING_LABEL_FILE     6
+warn  BOX_HUGE               3
+warn  BOX_TINY               7
+warn  EMPTY_LABEL            15
+warn  POSSIBLE_FALSE_POS     24
+warn  POSSIBLE_LOOSE_BOX     61
+warn  POSSIBLE_MISSING       266
+warn  POSSIBLE_WRONG_CLASS   23

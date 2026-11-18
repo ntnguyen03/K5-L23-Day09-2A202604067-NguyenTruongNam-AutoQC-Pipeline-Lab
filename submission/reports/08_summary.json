@@ -1,0 +1,18 @@
+{
+  "verdict": {
+    "decision": "Hold",
+    "n_errors": 0,
+    "n_warn_images": 64,
+    "n_images": 205,
+    "warn_ratio": 0.3122,
+    "reasons": [
+      "Cảnh báo trên 64/205 ảnh chưa duyệt, đạt ngưỡng 10%."
+    ]
+  },
+  "reviewed": 80,
+  "budget": 80,
+  "seconds": 5.6,
+  "exported": "D:\\ai20k\\K5-L23-Day09-2A202604067-NguyenTruongNam-AutoQC-Pipeline-Lab\\submission\\export\\clean_v1",
+  "config_sha1": "51307975c39a880c5fc2f44a767398425d299e38",
+  "review_sim_sha1": "7988ca22827f780a7043a2300490e679a1697154"
+}
