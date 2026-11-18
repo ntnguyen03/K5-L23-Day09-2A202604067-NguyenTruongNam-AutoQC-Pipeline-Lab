@@ -37,7 +37,15 @@ Phép thử `--budget 0` với báo cáo và export riêng cho **Rework**, mã t
 
 ## 5. Train raw vs clean
 
-Chưa chạy. Lần thực hiện này tập trung vào phần lõi và kiểm tra cửa chặn, chưa thực hiện thí nghiệm hai seed trên GPU.
+YOLO26n, Colab GPU, 20 epoch, batch 16, ảnh 640 px, seed 0 và 1. Hai biến thể dùng chung validation và test. Số ảnh trong bảng là số file ảnh đã dựng trước bước lọc của Ultralytics.
+
+| Biến thể | Ảnh đầu vào | mAP50 | mAP50–95 | Precision | Recall |
+|---|---:|---:|---:|---:|---:|
+| raw | 224 | 0,726 ± 0,000 | 0,512 ± 0,004 | 0,764 ± 0,061 | 0,649 ± 0,028 |
+| clean | 205 | 0,682 ± 0,047 | 0,469 ± 0,025 | 0,718 ± 0,111 | 0,603 ± 0,012 |
+
+Clean thấp hơn raw ở cả hai seed. Chênh mAP50 trung bình là −0,0435, nhỏ hơn độ lệch chuẩn 0,0473 của clean. Với hai seed, chưa đủ bằng chứng để kết luận việc làm sạch làm giảm khả năng tổng quát. Hai giả thuyết cần kiểm là raw được lợi từ 4 ảnh trùng test và clean vẫn còn 64 ảnh có cảnh báo chưa duyệt. Có thể đánh giá lại hai biến thể trên cùng tập test đã loại ca trùng, đối chiếu các cờ còn lại bằng mắt, rồi chạy thêm seed. Xem [phân tích theo lớp và cách kiểm](results/ANALYSIS.md).
+
 
 ## 6. Quyết định và ghi chú AI
 
