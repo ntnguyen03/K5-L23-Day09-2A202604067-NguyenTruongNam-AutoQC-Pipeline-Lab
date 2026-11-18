@@ -1,39 +1,87 @@
-"""BƯỚC 2/4 — Sửa tự động những lỗi bắt buộc mà máy sửa được AN TOÀN.   ★★
+"""Apply deterministic repairs to the working dataset and record them."""
+from collections import defaultdict
 
-Test:  pytest tests/test_autofix.py -q
+import yaml
 
-`fix(ds, issues, cfg) -> list[dict]`: duyệt `issues` (chỉ lỗi severity ERROR), sửa thẳng vào thư mục `ds`,
-và trả về danh sách thay đổi; mỗi phần tử có khoá: image, line, action, before, after
-(đây chính là file `03_fixes.csv` — bằng chứng pipeline đã làm gì, người có thể kiểm lại).
+from ..common import ERROR, parse_yolo_line
 
-| code lỗi                                       | cách sửa                                    | action           |
-|------------------------------------------------|---------------------------------------------|------------------|
-| BAD_FORMAT, BAD_CLASS_ID, BOX_ZERO, DUP_BOX    | xoá dòng đó khỏi file nhãn                  | "drop_line"      |
-| BOX_OUT_OF_IMAGE                               | cắt box về trong [0,1] (giữ nguyên lớp)     | "clip_box"       |
-| MISSING_LABEL_FILE                             | KHÔNG sửa file (máy không thể bịa nhãn): ghi 1 dòng fix, before="(không có file)", after="chuyển người gán" | "needs_label" |
-| BAD_CLASS_NAME                                 | ghi lại `names` trong data.yaml đúng `cfg["classes"]` | "rename_classes" |
-| DUP_IMAGE_*, LEAK_TEST, CORRUPT_IMAGE, BAD_SIZE| xoá ảnh + nhãn khỏi `ds`                    | "remove_image"   |
 
-Bẫy cần nghĩ tới (có test cho từng cái)
-- Một file có NHIỀU dòng lỗi: số dòng trong `issues` là số dòng GỐC. Nếu xoá từng dòng một thì số dòng lệch.
-  Gom theo file, rồi ghi lại MỘT lần.
-- Sau khi cắt, box có thể không còn diện tích (nằm hẳn ngoài ảnh): lúc đó xoá dòng thay vì ghi box rỗng.
-- Một dòng có 2 lỗi (vd. BOX_OUT_OF_IMAGE + DUP_BOX): xoá dòng thắng, chỉ ghi 1 fix `drop_line`, không ghi thêm `clip_box`. Dòng trống ở giữa file vẫn đếm vào số dòng gốc.
-- Ảnh vừa bị xoá (DUP_IMAGE_*...) mà còn issue dòng của chính nó: bỏ qua êm, không được báo lỗi/chết.
-- Không động tới lỗi WARN (cảnh báo là việc của người). Không sửa file ở `data/raw/` — chỉ sửa `ds`.
-- Chạy lần 2 trên dữ liệu đã sửa phải không làm gì thêm (idempotent) — NGOẠI LỆ duy nhất: `needs_label` được ghi lại mỗi lần còn lỗi `MISSING_LABEL_FILE` (vì ảnh vẫn chưa có nhãn).
+DROP = {"BAD_FORMAT", "BAD_CLASS_ID", "BOX_ZERO", "DUP_BOX"}
+REMOVE = {"LEAK_TEST", "CORRUPT_IMAGE", "BAD_SIZE"}
 
-- `needs_label` KHÔNG tạo file nhãn rỗng (rỗng = "ảnh nền", khác với "chưa gán"). `review_queue` sẽ đẩy ảnh này lên đầu hàng đợi cho người.
 
-Gợi ý: `yaml.safe_load / safe_dump`.
-"""
-from collections import defaultdict  # noqa: F401
-
-import yaml  # noqa: F401
-
-from ..common import ERROR, parse_yolo_line  # noqa: F401
+def clipped_label(raw):
+    cls, x, y, w, h = parse_yolo_line(raw)
+    left, right = max(0, x - w / 2), min(1, x + w / 2)
+    top, bottom = max(0, y - h / 2), min(1, y + h / 2)
+    if right <= left or bottom <= top:
+        return ""
+    values = ((left + right) / 2, (top + bottom) / 2, right - left, bottom - top)
+    return f"{cls} " + " ".join(repr(value) for value in values)
 
 
 def fix(ds, issues, cfg):
-    # TODO
-    raise NotImplementedError("autofix chưa làm")
+    errors = [issue for issue in issues if issue.severity == ERROR]
+    removed = set()
+    changes = []
+    by_image = defaultdict(dict)
+    pending_labels = set()
+
+    def record(image, line, action, before, after):
+        changes.append(dict(image=image, line=line, action=action, before=before, after=after))
+
+    for issue in errors:
+        if issue.code not in REMOVE and not issue.code.startswith("DUP_IMAGE_"):
+            continue
+        stem = issue.image
+        if stem in removed:
+            continue
+        removed.add(stem)
+        image = ds.image_path(stem)
+        label = ds.label_path(stem)
+        if image is not None or label.exists():
+            before = image.name if image is not None else label.name
+            if image is not None:
+                image.unlink()
+            label.unlink(missing_ok=True)
+            record(stem, None, "remove_image", before, "")
+
+    for issue in errors:
+        stem = issue.image
+        if stem in removed:
+            continue
+        if issue.code in DROP:
+            by_image[stem][issue.line] = "drop_line"
+        elif issue.code == "BOX_OUT_OF_IMAGE":
+            by_image[stem].setdefault(issue.line, "clip_box")
+        elif issue.code == "MISSING_LABEL_FILE" and not ds.label_path(stem).exists():
+            if stem not in pending_labels:
+                pending_labels.add(stem)
+                record(stem, None, "needs_label", "(không có file)", "chuyển người gán")
+        elif issue.code == "BAD_CLASS_NAME":
+            config = yaml.safe_load(ds.yaml_path.read_text(encoding="utf-8")) if ds.yaml_path.exists() else {}
+            config = config or {}
+            before = config.get("names")
+            if before != cfg["classes"]:
+                config["names"] = list(cfg["classes"])
+                ds.yaml_path.write_text(yaml.safe_dump(config, allow_unicode=True, sort_keys=False), encoding="utf-8")
+                record("data.yaml", None, "rename_classes", str(before), str(config["names"]))
+
+    for stem, actions in by_image.items():
+        path = ds.label_path(stem)
+        if not path.exists():
+            continue
+        original = path.read_text(encoding="utf-8", errors="replace").splitlines()
+        updated = []
+        for line, raw in enumerate(original, 1):
+            action = actions.get(line)
+            if action is None:
+                updated.append(raw)
+                continue
+            after = clipped_label(raw) if action == "clip_box" else ""
+            if after:
+                updated.append(after)
+            record(stem, line, "clip_box" if after else "drop_line", raw, after)
+        if updated != original:
+            path.write_text("\n".join(updated) + ("\n" if updated else ""), encoding="utf-8")
+    return changes
